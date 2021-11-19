@@ -1,22 +1,20 @@
 <template>
   <section id="post-body">
-  <TextPostComp  date="Nov 19, 2021 05:02" text="A post should have the same structure as previous homework, but it has to be a component
+  <PostComp  date="Nov 19, 2021 05:02" text="A post should have the same structure as previous homework, but it has to be a component
 that relies on Vuex global store to acquire/fetch its content information (3 points).
 "/>
-  <ImgPostComp  date="Aug 19, 2021 15:00" image="Kassari_sääretirp.png" text="Hiiumaa: Kassari sääretirp"/>
+  <PostComp  date="Aug 19, 2021 15:00" image="Kassari_sääretirp.png" text="Hiiumaa: Kassari sääretirp"/>
   </section>
 </template>
 
 <script>
 // @ is an alias to /src
-import ImgPostComp from '@/components/ImgPost.vue'
-import TextPostComp from '@/components/TextPost.vue'
+import PostComp from '@/components/Post.vue'
 
 export default {
   name: 'Home',
   components: {
-    ImgPostComp,
-    TextPostComp
+    PostComp
   }
 }
 </script>

@@ -4,8 +4,8 @@
     <img :src="require(`@/assets/img/${avatar}`)" class="avatar" alt="User avatar">
     <p> {{ date }}</p>
     </div>
-    <div class="post_photo">
-    <img :src="require(`@/assets/img/${image}`)" class="photo" alt="Kassari sääretirp">
+    <div v-if="image" class="post_photo">
+    <img :src="require(`@/assets/img/${image}`)" class="photo" alt="Post's image">
     </div>
     <p>{{ text }}</p>
     <div class="post_footer">
@@ -16,14 +16,17 @@
 
 <script>
 export default {
-  name: 'ImgPostComp',
+  name: 'PostComp',
   props: {
     avatar: {
       type: String,
       default: "default_avatar.png"
     },
     date: String,
-    image: String,
+    image: {
+      type: String,
+      default: null
+    },
     text: String
   }
 }
