@@ -26,7 +26,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style scoped>
 header {
 
   display: flex;
@@ -46,7 +46,6 @@ header > div {
   flex-grow: 2;
   height: 35px;
   padding: 5px;
-  border-bottom: 1px solid #eee;
   /* overall use 46px height */
 
 }
@@ -60,7 +59,8 @@ header div img {
 
 header #nav {
 
-  padding: 5px;
+  height: 100%;
+  padding: 14px;
   bottom: 0px;
 
 }

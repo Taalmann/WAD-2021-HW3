@@ -44,10 +44,14 @@ section {
   height: 100%;
   margin: auto;
   margin-top: 46px;
-  margin-bottom: 20px;
+  margin-bottom: 18.13px;
 
   background-color: #f5f5f5;
 
+}
+
+a:visited {
+    color: inherit;
 }
 
 </style>
