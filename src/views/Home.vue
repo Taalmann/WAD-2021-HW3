@@ -1,9 +1,9 @@
 <template>
   <section id="post-body">
-  <PostComp  date="Nov 19, 2021 05:02" text="A post should have the same structure as previous homework, but it has to be a component
-that relies on Vuex global store to acquire/fetch its content information (3 points).
-"/>
+  <PostComp  v-for="post in postList" :key="post.postID" :date="post.date" :text="post.text" :avatar="post.avatar" :image="post.image" :likes="post.likes"/>
+<!--
   <PostComp  date="Aug 19, 2021 15:00" image="Kassari_sääretirp.png" text="Hiiumaa: Kassari sääretirp"/>
+-->
   </section>
 </template>
 
@@ -15,6 +15,11 @@ export default {
   name: 'Home',
   components: {
     PostComp
+  },  
+  computed: {
+    postList(){
+      return this.$store.state.postList
+    }
   }
 }
 </script>

@@ -1,16 +1,25 @@
 <template>
 <div class="post">
-    <div class="post_header">
-    <img :src="require(`@/assets/img/${avatar}`)" class="avatar" alt="User avatar">
-    <p> {{ date }}</p>
-    </div>
-    <div v-if="image" class="post_photo">
-    <img :src="require(`@/assets/img/${image}`)" class="photo" alt="Post's image">
-    </div>
-    <p>{{ text }}</p>
-    <div class="post_footer">
-    <img src="@/assets/img/thumb_up.png" class="thumb_up" alt="Thumb up">
-    </div>
+<!-- Post header: avatar + timestamp -->
+  <div v-if="avatar" class="post_header">
+  <img :src="require(`@/assets/img/${avatar}`)" class="avatar" alt="User avatar">
+  <p> {{ date }}</p>
+  </div>
+  <div v-else class="post_header">
+  <img src="@/assets/img/default_avatar.png" class="avatar" alt="User avatar">
+  <p> {{ date }}</p>
+  </div>
+<!-- Post image (if any)-->
+  <div v-if="image" class="post_photo">
+  <img :src="require(`@/assets/img/${image}`)" class="photo" alt="Post's image">
+  </div>
+<!-- Post content -->
+  <p>{{ text }}</p>
+<!-- Post footer, likes and their counts (TODO) -->
+  <div class="post_footer">
+  <img src="@/assets/img/thumb_up.png" class="thumb_up" alt="Thumb up">
+  {{ likes }}
+  </div>
 </div>
 </template>
 
@@ -20,14 +29,15 @@ export default {
   props: {
     avatar: {
       type: String,
-      default: "default_avatar.png"
+      default: null
     },
     date: String,
     image: {
       type: String,
       default: null
     },
-    text: String
+    text: String,
+    likes: Number
   }
 }
 </script>
