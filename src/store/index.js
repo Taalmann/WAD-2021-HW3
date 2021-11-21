@@ -28,7 +28,7 @@ export default new Vuex.Store({
     IncreaseLikesAct(act, postID) {
       setTimeout(function(){
         act.commit("IncreaseLikes", postID)
-      }, 1000)
+      }, 100)
     }
   },
   modules: {
