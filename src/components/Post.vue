@@ -17,7 +17,7 @@
   <p>{{ text }}</p>
 <!-- Post footer, likes and their counts (TODO) -->
   <div class="post_footer">
-  <img src="@/assets/img/thumb_up.png" class="thumb_up" alt="Thumb up">
+  <button v-on:click="IncreaseLikes"><img src="@/assets/img/thumb_up.png" class="thumb_up" alt="Thumb up"></button>
   {{ likes }}
   </div>
 </div>
@@ -37,7 +37,12 @@ export default {
       default: null
     },
     text: String,
-    likes: Number
+    likes: Number,
+    methods: {
+      IncreaseLikes: function() {
+        this.$store.dispatch("IncreaseLikesAct")
+      }
+    }
   }
 }
 </script>
