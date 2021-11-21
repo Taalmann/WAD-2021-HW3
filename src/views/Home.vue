@@ -1,5 +1,7 @@
 <template>
   <section id="post-body">
+  <button v-on:click="ResetLikes" class="resetButton">Reset Likes</button> 
+  <!--<ButtonComp></ButtonComp>-->
   <PostComp  v-for="post in postList" :key="post.postID" :postID="post.postID" :date="post.date" :text="post.text" :avatar="post.avatar" :image="post.image" :likes="post.likes"/>
 <!--
   <PostComp  date="Aug 19, 2021 15:00" image="Kassari_sääretirp.png" text="Hiiumaa: Kassari sääretirp"/>
@@ -20,12 +22,26 @@ export default {
     postList(){
       return this.$store.state.postList
     }
+  }, 
+  methods: {
+      ResetLikes(){
+          this.$store.dispatch("ResetLikesAct")
+      }
   }
 }
 </script>
  
 
 <style>
+.resetButton {
+  background: red;
+  font-weight: bold;
+  color: black;
+  width: 100px;
+  height: 50px;
+  margin: 10px;
+}
+
 p {
 
   margin-top: 0px;

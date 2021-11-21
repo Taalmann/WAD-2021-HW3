@@ -22,12 +22,22 @@ export default new Vuex.Store({
   mutations: {
     IncreaseLikes(state, postID) {
       state.postList.find(item => item.postID === postID).likes += 1
+    },
+    ResetLikes: state => {
+      state.postList.forEach(post => {
+        post.likes = 0
+      })
     }
   },
   actions: {
     IncreaseLikesAct(act, postID) {
       setTimeout(function(){
         act.commit("IncreaseLikes", postID)
+      }, 100)
+    },
+    ResetLikesAct: act => {
+      setTimeout(function(){
+        act.commit("ResetLikes")
       }, 100)
     }
   },
