@@ -1,6 +1,6 @@
 <template>
   <section id="post-body">
-  <PostComp  v-for="post in postList" :key="post.postID" :date="post.date" :text="post.text" :avatar="post.avatar" :image="post.image" :likes="post.likes"/>
+  <PostComp  v-for="post in postList" :key="post.postID" :postID="post.postID" :date="post.date" :text="post.text" :avatar="post.avatar" :image="post.image" :likes="post.likes"/>
 <!--
   <PostComp  date="Aug 19, 2021 15:00" image="Kassari_sääretirp.png" text="Hiiumaa: Kassari sääretirp"/>
 -->

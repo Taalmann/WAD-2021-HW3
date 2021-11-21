@@ -20,16 +20,14 @@ export default new Vuex.Store({
       ]
   },
   mutations: {
-    IncreaseLikes: state => {
-      state.postList.forEach(post => {
-        post.likes += 1
-      })
+    IncreaseLikes(state, postID) {
+      state.postList.find(item => item.postID === postID).likes += 1
     }
   },
   actions: {
-    IncreaseLikesAct: act => {
+    IncreaseLikesAct(act, postID) {
       setTimeout(function(){
-        act.commit("IncreaseLikes")
+        act.commit("IncreaseLikes", postID)
       }, 1000)
     }
   },
